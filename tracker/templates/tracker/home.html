@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Mood History</title></head>
+<body>
+    <h1>Your Mood History</h1>
+    <a href="{% url 'log_mood' %}">Log Today's Mood</a>
+    <ul>
+        {% for mood in moods %}
+            <li><strong>{{ mood.date }}</strong>: {{ mood.mood }} - {{ mood.note }}</li>
+        {% empty %}
+            <li>No moods logged yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Song Suggestions</title></head>
+<body>
+    <h1>Your Mood: {{ entry.mood }}</h1>
+    <p>Note: {{ entry.note }}</p>
+    <h2>Recommended Songs:</h2>
+    <ul>
+        {% for song in songs %}
+            <li>{{ song }}</li>
+        {% empty %}
+            <li>No songs found for this mood.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
